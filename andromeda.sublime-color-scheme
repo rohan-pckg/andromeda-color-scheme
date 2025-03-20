@@ -1,0 +1,272 @@
+{
+    "name": "Andromeda Enhanced Plus",
+    "globals": {
+        "background": "#1e2025",             // Andromeda dark base
+        "foreground": "#f7f7f8",             // Andromeda bright white
+        "caret": "#10a793",                  // Andromeda teal cursor
+        "line_highlight": "#21242bbf",       // Subtle Andromeda line highlight
+        "selection": "#10a7933d",            // Teal selection with transparency
+        "selection_border": "#10a793",       // Teal border
+        "misspelling": "#f82871",            // Andromeda pink-red for errors
+        "accent": "#10a793",                 // Teal as primary accent
+        "gutter": "#1e2025",                 // Matches background
+        "gutter_foreground": "#565960",      // Dim line numbers
+        "invisibles": "#64646d",             // Subtle invisibles
+        "guide": "#f7f7f80d",                // Faint guides
+        "active_guide": "#f7f7f81a",         // Stronger active guides
+        "stack_guide": "#f7f7f80d",          // Matching stack guides
+        "find_highlight": "#08e7c5",         // Andromeda cyan for search
+        "brackets_foreground": "#aca8ae99",  // Muted brackets
+        "bracket_contents_foreground": "#aca8ae99" // Subtle bracket contents
+    },
+    "variables": {
+        // Core Andromeda palette
+        "bg": "#1e2025",                    // Base background
+        "bg_lighter": "#21242b",            // Elevated surfaces
+        "bg_lighter_2": "#262933",          // Status/title bar
+        "fg": "#f7f7f8",                    // Bright foreground
+        "fg_muted": "#aca8ae",              // Muted text
+        "fg_dim": "#6b6b73",                // Disabled/placeholder
+        "border": "#2b2f38",                // Default border
+        "border_focus": "#10a793",          // Teal focus
+        "accent_teal": "#10a793",           // Andromeda teal
+        "accent_orange": "#f29c14",         // Andromeda orange
+        "accent_purple": "#c74cec",         // Andromeda purple
+        "error": "#f82871",                 // Pink-red error
+        "warning": "#fee56c",               // Warm yellow warning
+        "success": "#96df71",               // Green success
+        "cyan": "#08e7c5",                  // Andromeda cyan
+
+        // New complementary colors enhancing Andromeda's aesthetic
+        "soft_teal": "#83a598",             // Softer teal for secondary accents
+        "deep_purple": "#682681",           // Darker purple from Andromeda's bright magenta
+        "muted_green": "#457c38",           // Subtle green from Andromeda's ANSI palette
+        "bright_pink": "#e06c78",           // Vibrant pink inspired by Andromeda's red tones
+        "gold": "#d79921",                  // Warm gold to complement orange
+        "silver": "#d8d5db",                // Bright silver for punctuation
+        "shadow": "#40434c"                 // Dark gray for subtle highlights
+    },
+    "rules": [
+        // Editor Base
+        {
+            "scope": "text",
+            "foreground": "var(fg)"
+        },
+        {
+            "scope": "comment, comment.doc",
+            "foreground": "var(fg_muted)",
+            "font_style": "italic"
+        },
+        {
+            "scope": "string, string.regex, string.special, text.literal",
+            "foreground": "var(accent_orange)"  // Andromeda orange for strings
+        },
+        {
+            "scope": "constant.numeric, constant.language, constant.other",
+            "foreground": "var(success)"        // Andromeda green for constants
+        },
+        {
+            "scope": "keyword, storage, entity.name.tag, meta.mapping.key string.unquoted",
+            "foreground": "var(accent_teal)",   // Andromeda teal for keywords
+            "font_style": "bold"
+        },
+        {
+            "scope": "storage.type",
+            "foreground": "var(cyan)",          // Andromeda cyan for types
+            "font_style": "italic"
+        },
+        {
+            "scope": "variable.function, variable.annotation, support.function, support.macro",
+            "foreground": "var(warning)"        // Andromeda yellow for functions
+        },
+        {
+            "scope": "variable.parameter",
+            "foreground": "var(gold)",          // Warm gold for parameters
+            "font_style": "italic"
+        },
+        {
+            "scope": "variable.language",
+            "foreground": "var(soft_teal)",     // Softer teal for language vars
+            "font_style": "italic"
+        },
+        {
+            "scope": "entity.name - (entity.name.filename | entity.name.section | entity.name.tag | entity.name.label)",
+            "foreground": "var(cyan)"           // Cyan for function/class names
+        },
+        {
+            "scope": "entity.other.inherited-class, support.type, support.class",
+            "foreground": "var(cyan)",          // Cyan for inherited types
+            "font_style": "italic"
+        },
+        {
+            "scope": "entity.other.attribute-name",
+            "foreground": "var(bright_pink)"    // Vibrant pink for attributes
+        },
+        {
+            "scope": "operator, enum",
+            "foreground": "var(accent_purple)"  // Andromeda purple for operators
+        },
+        {
+            "scope": "punctuation, punctuation.bracket, punctuation.delimiter, punctuation.list_marker, punctuation.special",
+            "foreground": "var(silver)"         // Bright silver for punctuation
+        },
+        {
+            "scope": "invalid",
+            "foreground": "var(fg)",
+            "background": "var(error)"          // Pink-red for invalid
+        },
+        {
+            "scope": "invalid.deprecated",
+            "foreground": "var(fg)",
+            "background": "var(deep_purple)"    // Deep purple for deprecated
+        },
+
+        // Markup
+        {
+            "scope": "markup.heading",
+            "foreground": "var(fg)",
+            "font_style": "bold"
+        },
+        {
+            "scope": "markup.heading.1 punctuation.definition.heading",
+            "foreground": "var(accent_teal)"    // Teal for h1
+        },
+        {
+            "scope": "markup.underline.link",
+            "foreground": "var(cyan)",          // Cyan for links
+            "font_style": "underline"
+        },
+        {
+            "scope": "markup.link_text",
+            "foreground": "var(accent_orange)", // Orange for link text
+            "font_style": "italic"
+        },
+        {
+            "scope": "markup.bold",
+            "font_style": "bold"
+        },
+        {
+            "scope": "markup.italic",
+            "font_style": "italic"
+        },
+        {
+            "scope": "markup.bold markup.italic, markup.italic markup.bold",
+            "font_style": "bold italic"
+        },
+        {
+            "scope": "markup.quote",
+            "foreground": "var(muted_green)",   // Subtle green for quotes
+            "font_style": "italic"
+        },
+        {
+            "scope": "markup.raw",
+            "background": "#21242b80",         // Subtle overlay
+            "foreground": "var(fg_muted)"
+        },
+
+        // Diff
+        {
+            "scope": "markup.deleted",
+            "foreground": "var(error)",
+            "background": "#f8287126"          // Pink-red diff deleted
+        },
+        {
+            "scope": "markup.inserted",
+            "foreground": "var(success)",
+            "background": "#96df7126"          // Green diff inserted
+        },
+        {
+            "scope": "markup.changed",
+            "foreground": "var(warning)",
+            "background": "#fee56c26"          // Yellow diff changed
+        },
+
+        // UI Elements
+        {
+            "scope": "sidebar_container",
+            "background": "var(bg_lighter)"
+        },
+        {
+            "scope": "sidebar_label",
+            "foreground": "var(fg_muted)"
+        },
+        {
+            "scope": "sidebar_label.selected",
+            "foreground": "var(fg)"
+        },
+        {
+            "scope": "tabset_control",
+            "background": "var(bg_lighter)"
+        },
+        {
+            "scope": "tab_control",
+            "background": "var(bg_lighter)"
+        },
+        {
+            "scope": "tab_control.selected",
+            "background": "var(bg)"
+        },
+        {
+            "scope": "tab_label",
+            "foreground": "var(fg_muted)"
+        },
+        {
+            "scope": "tab_label.selected",
+            "foreground": "var(fg)"
+        },
+        {
+            "scope": "status_bar",
+            "background": "var(bg_lighter_2)"
+        },
+        {
+            "scope": "status_bar_label",
+            "foreground": "var(fg_muted)"
+        },
+        {
+            "scope": "quick_panel",
+            "background": "var(bg_lighter)"
+        },
+        {
+            "scope": "quick_panel_label",
+            "foreground": "var(fg_muted)"
+        },
+        {
+            "scope": "quick_panel_label.selected",
+            "foreground": "var(fg)"
+        },
+        {
+            "scope": "quick_panel_label.match",
+            "foreground": "var(accent_teal)"
+        },
+
+        // Additional Scopes (inspired by Monokai's coverage)
+        {
+            "scope": "meta.structure.dictionary.json string.quoted.double.json",
+            "foreground": "var(accent_orange)"  // Orange for JSON strings
+        },
+        {
+            "scope": "string.unquoted.yaml",
+            "foreground": "var(fg)"             // White for YAML strings
+        },
+        {
+            "scope": "meta.diff, meta.diff.header",
+            "foreground": "var(fg_dim)"
+        },
+        {
+            "scope": "entity.name.filename",
+            "foreground": "var(warning)"        // Yellow for filenames
+        },
+        {
+            "scope": "message.error",
+            "foreground": "var(error)"
+        },
+        {
+            "scope": "message.warning",
+            "foreground": "var(warning)"
+        },
+        {
+            "scope": "message.info",
+            "foreground": "var(cyan)"
+        }
+    ]
+}
